@@ -16,7 +16,7 @@
 
 let nombreInteresado = prompt("Por favor, ingresa tu nombre");
 
-for (i = 1; i <= 3; i++) {
+for (i = 1; i <= 2; i++) {
   if (
     nombreInteresado == "" ||
     nombreInteresado == "." ||
@@ -29,3 +29,59 @@ for (i = 1; i <= 3; i++) {
 }
 
 console.log(nombreInteresado);
+
+let numPersonas = 0;
+
+numPersonas = parseInt(
+  prompt(
+    "Hola, " +
+      nombreInteresado +
+      " por favor ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"
+  )
+);
+
+// En el HTML tendría la descripción de cada uno de los paquetes y para este ejercicio les asigno un número a cada uno de ellos para que los seleccionen
+//Estos son los precios por persona de los paquetes
+
+const paqCofBrPx = parseInt(180);
+const paqDesEmpPx = parseInt(320);
+const paqComEmpPx = parseInt(465);
+const paqDesComPx = parseInt(605);
+
+const iva = parseFloat(0.16);
+
+let precioPaquete = 0;
+
+let subtotalpaquete = numPersonas * precioPaquete;
+
+let paqueteEspecial = prompt(
+  "Ingresa el número del paquete de tu interés: \n 1 - Paquete JSU Básico Plus \n 2 - Paquete JSU Básico Plus con Desayuno \n 3 - Paquete JSU Básico Plus con Comida \n 4 - Paquete JSU Básico Plus con Desayuno y Comida"
+);
+
+if (paqueteEspecial != "ESC") {
+  switch (paqueteEspecial) {
+    case "1":
+      alert("Seleccionaste el paquete #1 JSU Básico Plus");
+      precioPaquete = paqCofBrPx;
+      break;
+    case "2":
+      alert("Seleccionaste el paquete #2 JSU Básico Plus con Desayuno");
+      precioPaquete = paqDesEmpPx;
+      break;
+    case "3":
+      alert("Seleccionaste el paquete #3 JSU Básico Plus con Comida");
+      precioPaquete = paqComEmpPx;
+      break;
+    case "4":
+      alert(
+        "Seleccionaste el paquete #4 JSU Básico Plus con Desayuno y Comida"
+      );
+      precioPaquete = paqDesComPx;
+      break;
+    default:
+      alert(
+        "No seleccionaste ninguno de nuestros paquetes. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización"
+      );
+      break;
+  }
+}
