@@ -85,3 +85,43 @@ if (paqueteEspecial != "ESC") {
       break;
   }
 }
+
+if (
+  (paqueteEspecial == "1" ||
+    paqueteEspecial == "2" ||
+    paqueteEspecial == "3" ||
+    paqueteEspecial == "4") &&
+  numPersonas >= 10 &&
+  numPersonas <= 200
+) {
+  subtotalpaquete = precioPaquete * numPersonas;
+
+  console.log(subtotalpaquete);
+
+  calcularIVA = subtotalpaquete * iva;
+
+  console.log(calcularIVA);
+
+  totalpaquete = subtotalpaquete + calcularIVA;
+
+  console.log(totalpaquete);
+
+  alert(
+    nombreInteresado +
+      ", el costo del paquete que seleccionaste para " +
+      numPersonas +
+      " personas es el siguiente: \n Subtotal = $ " +
+      subtotalpaquete +
+      "\n IVA = $ " +
+      calcularIVA +
+      "\n Total = $ " +
+      totalpaquete
+  );
+  alert(
+    "Si quieres contratar este paquete o requieres más información, llena nuestro formulario de contacto / cotización"
+  );
+} else {
+  alert(
+    "Lo sentimos, no podemos darte una cotización porque el número de personas ingresado no estaba en el rango establecido o no elegiste una opción válida de paquete."
+  );
+}
